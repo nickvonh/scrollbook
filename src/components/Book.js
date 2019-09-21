@@ -47,7 +47,6 @@ class Book extends React.Component {
 		const next = this.state.active < this.pages.length-1 ? this.pages[this.state.active + 1] : null;
 		const prev = this.state.active > 0 ? this.pages[this.state.active -1] : null;
 
-		console.log(curr, next, prev)
 		return (
 			<div className = "Book" > 
 				{prev ? <Page className={'prev'} page={prev} index={'prev'}/> : null}
