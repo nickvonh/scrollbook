@@ -6,17 +6,18 @@ class App extends React.Component {
 
   constructor(props){
     super(props);
+    this.state = {
+      height: 0
+    }
   }
 
   componentDidMount(){
   }
 
-
   render(){
-    
     return (
-      <div className="App ">
-        <Book/>
+      <div className="App" style={{height: this.state.height}}>
+        <Book setHeight={val => this.setState({height: val})} />
       </div>
     );
   }
