@@ -22,7 +22,7 @@ class Book extends React.Component {
 				{
 					src: 'sky.jpeg',
 					width: 'fill',
-					duration: 8
+					duration: 1000
 				},
 				{
 					src: 'ground-1.png',
@@ -101,7 +101,70 @@ class Book extends React.Component {
 					width: '100%',
 					y: '66%',
 				}
-			]
+			],
+
+			//Frame 7
+			[
+				{
+					src: 'ground-3.png',
+					width: '100%',
+					y: '64%',
+				}
+			],
+
+			//Frame 8
+			[
+				{
+					src: 'ground-4.png',
+					width: '100%',
+					y: '43%',
+				}
+			],
+
+			//Frame 9
+			[
+				{
+					src: 'ground-5.png',
+					width: '100%',
+					y: '43%',
+				},
+				{
+					src: 'sprout-1.png',
+					width: '5%',
+					x: '55%',
+					y: '78%'
+				}
+			],
+
+			//Frame 10
+			[
+				{
+					src: 'ground-4.png',
+					width: '100%',
+					y: '43%',
+				},
+				{
+					src: 'sprout-2.png',
+					width: '5%',
+					x: '56%',
+					y: '75%'
+				}
+			],
+
+			//Frame 11
+			[
+				{
+					src: 'ground-3.png',
+					width: '100%',
+					y: '64%',
+				},
+				{
+					src: 'sprout-3.png',
+					width: '5%',
+					x: '56%',
+					y: '66%'
+				}
+			],
 		];
 
 		this.pixelsPerFrame = 1000;
