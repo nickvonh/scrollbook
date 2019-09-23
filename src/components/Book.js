@@ -16,23 +16,37 @@ class Book extends React.Component {
 
 		this.layers = [
 			// Arc 1
-			{
-				src: 'sky.jpeg',
-				width: 'fill',
-				duration: 8
-			},
+			
+			//Frame 1
+			[
+				{
+					src: 'sky.jpeg',
+					width: 'fill',
+					duration: 8
+				},
+				{
+					src: 'ground-1.png',
+					width: '100%',
+					y: '70%',
+					duration: 5
+				},
+			],
+
+			//Frame 2
 			{
 				src: 'bird-down.png',
 				width: '10%',
 				x: '10%',
-				y: '40%'
+				y: '30%'
 			},
+
+			//Frame 3
 			[
 				{
 					src: 'bird-mid.png',
 					width: '10%',
 					x: '30%',
-					y: '35%'
+					y: '25%'
 				},
 				{
 					src: 'seed.png',
@@ -41,12 +55,14 @@ class Book extends React.Component {
 					y: '50%',
 				},
 			],
+
+			//Frame 4
 			[
 				{
 					src: 'bird-up.png',
 					width: '10%',
 					x: '50%',
-					y: '30%'
+					y: '20%'
 				},
 				{
 					src: 'seed.png',
@@ -54,6 +70,37 @@ class Book extends React.Component {
 					x: '50%',
 					y: '60%',
 				},
+			],
+
+			//Frame 5
+			[
+				{
+					src: 'bird-down.png',
+					width: '10%',
+					x: '75%',
+					y: '15%'
+				},
+				{
+					src: 'seed.png',
+					width: '2%',
+					x: '57%',
+					y: '77%',
+				},
+			],
+
+			//Frame 6
+			[
+				{
+					src: 'bird-up.png',
+					width: '10%',
+					x: '85%',
+					y: '5%'
+				},
+				{
+					src: 'ground-2.png',
+					width: '100%',
+					y: '66%',
+				}
 			]
 		];
 
@@ -116,7 +163,7 @@ class Book extends React.Component {
 
 	render() {
 		console.log('Current frame:', this.state.frameIndex);
-		const activeLayers = this.activeLayers.map(ea => <img src={`img/${ea.src}`} style={(() => {
+		const activeLayers = this.activeLayers.map(ea => <img src={`img/${ea.src}`} key={ea.src} style={(() => {
 			const style = {};
 			if (ea.width !== 'fill') {
 				ea.x && (style.left = ea.x);
