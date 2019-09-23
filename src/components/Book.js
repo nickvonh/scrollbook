@@ -97,6 +97,12 @@ class Book extends React.Component {
 					y: '5%'
 				},
 				{
+					src: 'rain-cloud1.png',
+					width: '40%',
+					x: '95%',
+					y: '10%'
+				},
+				{
 					src: 'ground-2.png',
 					width: '100%',
 					y: '66%',
@@ -105,6 +111,12 @@ class Book extends React.Component {
 
 			//Frame 7
 			[
+				{
+					src: 'rain-cloud2.png',
+					width: '35%',
+					x: '75%',
+					y: '10%'
+				},
 				{
 					src: 'ground-3.png',
 					width: '100%',
@@ -115,6 +127,12 @@ class Book extends React.Component {
 			//Frame 8
 			[
 				{
+					src: 'rain-cloud3.png',
+					width: '35%',
+					x: '55%',
+					y: '10%'
+				},
+				{
 					src: 'ground-4.png',
 					width: '100%',
 					y: '43%',
@@ -123,6 +141,12 @@ class Book extends React.Component {
 
 			//Frame 9
 			[
+				{
+					src: 'rain-cloud3.png',
+					width: '35%',
+					x: '35%',
+					y: '10%'
+				},
 				{
 					src: 'ground-5.png',
 					width: '100%',
@@ -138,6 +162,12 @@ class Book extends React.Component {
 
 			//Frame 10
 			[
+				{
+					src: 'rain-cloud4.png',
+					width: '35%',
+					x: '15%',
+					y: '10%'
+				},
 				{
 					src: 'ground-4.png',
 					width: '100%',
@@ -163,6 +193,36 @@ class Book extends React.Component {
 					width: '5%',
 					x: '56%',
 					y: '66%'
+				}
+			],
+
+			//Frame 12
+			[
+				{
+					src: 'ground-2.png',
+					width: '100%',
+					y: '66%',
+				},
+				{
+					src: 'sprout-4.png',
+					width: '9%',
+					x: '55%',
+					y: '66.5%'
+				}
+			],
+
+			//Frame 13
+			[
+				{
+					src: 'ground-1.png',
+					width: '100%',
+					y: '66%',
+				},
+				{
+					src: 'sprout-5.png',
+					width: '12%',
+					x: '53.5%',
+					y: '61%'
 				}
 			],
 		];
