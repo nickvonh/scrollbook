@@ -27,18 +27,34 @@ class Book extends React.Component {
 				x: '10%',
 				y: '40%'
 			},
-			{
-				src: 'bird-mid.png',
-				width: '10%',
-				x: '30%',
-				y: '35%'
-			},
-			{
-				src: 'bird-up.png',
-				width: '10%',
-				x: '50%',
-				y: '30%'
-			}
+			[
+				{
+					src: 'bird-mid.png',
+					width: '10%',
+					x: '30%',
+					y: '35%'
+				},
+				{
+					src: 'seed.png',
+					width: '2%',
+					x: '45%',
+					y: '50%',
+				},
+			],
+			[
+				{
+					src: 'bird-up.png',
+					width: '10%',
+					x: '50%',
+					y: '30%'
+				},
+				{
+					src: 'seed.png',
+					width: '2%',
+					x: '50%',
+					y: '60%',
+				},
+			]
 		];
 
 		this.pixelsPerFrame = 1000;
@@ -63,11 +79,26 @@ class Book extends React.Component {
 		const activeLayers = [];
 		for (let i = 0; i < this.state.frameIndex + 1; i++) {
 			const layer = this.layers[i];
-			if (
-				(layer.duration && layer.duration > (this.state.frameIndex - i)) ||
-				i == this.state.frameIndex
-			) {
-				activeLayers.push(layer);
+			
+			// if the layer has multiple assets
+			// loop through the assets and add them to
+			// activeLayers with the same i index
+			if(Array.isArray(layer)){
+				for(let each of layer){
+					if (
+						(each.duration && each.duration > (this.state.frameIndex - i)) ||
+						i == this.state.frameIndex
+					) {
+						activeLayers.push(each);
+					}
+				}
+			}else{
+				if (
+					(layer.duration && layer.duration > (this.state.frameIndex - i)) ||
+					i == this.state.frameIndex
+				) {
+					activeLayers.push(layer);
+				}
 			}
 		}
 		return activeLayers;
