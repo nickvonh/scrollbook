@@ -21,13 +21,14 @@ class Book extends React.Component {
 			[
 				{
 					src: 'sky.jpeg',
-					width: 'fill',
+					bottom: true,
+					width: '100%',
 					duration: 1000
 				},
 				{
 					src: 'ground-1.png',
 					width: '100%',
-					y: '70%',
+					bottom: true,
 					duration: 5
 				},
 			],
@@ -105,7 +106,7 @@ class Book extends React.Component {
 				{
 					src: 'ground-2.png',
 					width: '100%',
-					y: '66%',
+					bottom: true
 				}
 			],
 
@@ -120,7 +121,7 @@ class Book extends React.Component {
 				{
 					src: 'ground-3.png',
 					width: '100%',
-					y: '64%',
+					bottom: true
 				}
 			],
 
@@ -135,7 +136,7 @@ class Book extends React.Component {
 				{
 					src: 'ground-4.png',
 					width: '100%',
-					y: '43%',
+					bottom: true
 				}
 			],
 
@@ -150,7 +151,7 @@ class Book extends React.Component {
 				{
 					src: 'ground-5.png',
 					width: '100%',
-					y: '43%',
+					bottom: true
 				},
 				{
 					src: 'sprout-1.png',
@@ -171,7 +172,7 @@ class Book extends React.Component {
 				{
 					src: 'ground-4.png',
 					width: '100%',
-					y: '43%',
+					bottom: true
 				},
 				{
 					src: 'sprout-2.png',
@@ -186,7 +187,7 @@ class Book extends React.Component {
 				{
 					src: 'ground-3.png',
 					width: '100%',
-					y: '64%',
+					bottom: true
 				},
 				{
 					src: 'sprout-3.png',
@@ -201,7 +202,7 @@ class Book extends React.Component {
 				{
 					src: 'ground-2.png',
 					width: '100%',
-					y: '66%',
+					bottom: true
 				},
 				{
 					src: 'sprout-4.png',
@@ -216,7 +217,7 @@ class Book extends React.Component {
 				{
 					src: 'ground-1.png',
 					width: '100%',
-					y: '66%',
+					bottom: true
 				},
 				{
 					src: 'sprout-5.png',
@@ -291,6 +292,7 @@ class Book extends React.Component {
 			if (ea.width !== 'fill') {
 				ea.x && (style.left = ea.x);
 				ea.y && (style.top = ea.y);
+				ea.bottom && (style.bottom = 0);
 				ea.width && (style.width = ea.width);
 			} else {
 				style.width = '100%';

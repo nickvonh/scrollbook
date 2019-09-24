@@ -17,7 +17,9 @@ class App extends React.Component {
   render(){
     return (
       <div className="App" style={{height: this.state.height}}>
-        <Book setHeight={val => this.setState({height: val})} />
+        <div className="container">
+          <Book setHeight={val => this.setState({height: val})} />
+        </div>
       </div>
     );
   }
