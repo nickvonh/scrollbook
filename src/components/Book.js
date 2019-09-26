@@ -26,6 +26,12 @@ class Book extends React.Component {
 					duration: 1000
 				},
 				{
+					src: 'white-cloud-1.png',
+					width: '15%',
+					x: '20%',
+					y: '7%'
+				},
+				{
 					src: 'ground-1.png',
 					width: '100%',
 					bottom: true,
@@ -34,12 +40,20 @@ class Book extends React.Component {
 			],
 
 			//Frame 2
-			{
-				src: 'bird-down.png',
-				width: '10%',
-				x: '10%',
-				y: '30%'
-			},
+			[
+				{
+					src: 'bird-down.png',
+					width: '10%',
+					x: '10%',
+					y: '30%'
+				},
+				{
+					src: 'white-cloud-1.png',
+					width: '15%',
+					x: '15%',
+					y: '7%'
+				}
+			],
 
 			//Frame 3
 			[
@@ -55,6 +69,12 @@ class Book extends React.Component {
 					x: '45%',
 					y: '50%',
 				},
+				{
+					src: 'white-cloud-1.png',
+					width: '15%',
+					x: '10%',
+					y: '7%'
+				}
 			],
 
 			//Frame 4
@@ -71,6 +91,12 @@ class Book extends React.Component {
 					x: '50%',
 					y: '60%',
 				},
+				{
+					src: 'white-cloud-1.png',
+					width: '15%',
+					x: '5%',
+					y: '7%'
+				}
 			],
 
 			//Frame 5
@@ -86,7 +112,7 @@ class Book extends React.Component {
 					width: '2%',
 					x: '57%',
 					y: '77%',
-				},
+				}
 			],
 
 			//Frame 6
@@ -113,7 +139,7 @@ class Book extends React.Component {
 			//Frame 7
 			[
 				{
-					src: 'rain-cloud2.png',
+					src: 'rain-cloud3.png',
 					width: '35%',
 					x: '75%',
 					y: '10%'
@@ -134,7 +160,7 @@ class Book extends React.Component {
 			//Frame 8
 			[
 				{
-					src: 'rain-cloud3.png',
+					src: 'rain-cloud4.png',
 					width: '35%',
 					x: '57%',
 					y: '10%'
@@ -149,6 +175,13 @@ class Book extends React.Component {
 					src: 'ground-2.png',
 					width: '100%',
 					bottom: true
+				},
+				{
+					src: 'tree-background-2.png',
+					width: '15%',
+					x: '83%',
+					y: '55%',
+					duration: 1000
 				}
 			],
 
@@ -176,6 +209,13 @@ class Book extends React.Component {
 					width: '5%',
 					x: '55%',
 					y: '78%'
+				},
+				{
+					src: 'tree-background-1.png',
+					width: '23%',
+					x: '69%',
+					y: '64%',
+					duration: 1000
 				}
 			],
 
@@ -203,11 +243,30 @@ class Book extends React.Component {
 					width: '5%',
 					x: '56%',
 					y: '75%'
+				},
+				{
+					src: 'trees-background.png',
+					width: '50%',
+					x: '4%',
+					y: '60%',
+					duration: 1000
 				}
 			],
 
 			//Frame 11
 			[
+				{
+					src: 'rain-cloud4.png',
+					width: '35%',
+					x: '-5%',
+					y: '10%'
+				},
+				{
+					src: 'rain-2.png',
+					width: '30%',
+					x: '0%',
+					y: '28%'
+				},
 				{
 					src: 'ground-3.png',
 					width: '100%',
@@ -218,6 +277,13 @@ class Book extends React.Component {
 					width: '5%',
 					x: '55%',
 					y: '66%'
+				},
+				{
+					src: 'tree-background.png',
+					width: '15%',
+					x: '15%',
+					y: '57%',
+					duration: 1000
 				}
 			],
 
