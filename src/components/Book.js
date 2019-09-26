@@ -104,7 +104,7 @@ class Book extends React.Component {
 					y: '10%'
 				},
 				{
-					src: 'ground-2.png',
+					src: 'ground-1.png',
 					width: '100%',
 					bottom: true
 				}
@@ -119,7 +119,13 @@ class Book extends React.Component {
 					y: '10%'
 				},
 				{
-					src: 'ground-3.png',
+					src: 'rain-4.png',
+					width: '20%',
+					x: '75%',
+					y: '30%'
+				},
+				{
+					src: 'ground-1.png',
 					width: '100%',
 					bottom: true
 				}
@@ -130,11 +136,17 @@ class Book extends React.Component {
 				{
 					src: 'rain-cloud3.png',
 					width: '35%',
-					x: '55%',
+					x: '57%',
 					y: '10%'
 				},
 				{
-					src: 'ground-4.png',
+					src: 'rain-2.png',
+					width: '30%',
+					x: '57%',
+					y: '27%'
+				},
+				{
+					src: 'ground-2.png',
 					width: '100%',
 					bottom: true
 				}
@@ -147,6 +159,12 @@ class Book extends React.Component {
 					width: '35%',
 					x: '35%',
 					y: '10%'
+				},
+				{
+					src: 'rain-1.png',
+					width: '30%',
+					x: '38%',
+					y: '28%'
 				},
 				{
 					src: 'ground-5.png',
@@ -168,6 +186,12 @@ class Book extends React.Component {
 					width: '35%',
 					x: '15%',
 					y: '10%'
+				},
+				{
+					src: 'rain-2.png',
+					width: '30%',
+					x: '18%',
+					y: '28%'
 				},
 				{
 					src: 'ground-4.png',
@@ -192,7 +216,7 @@ class Book extends React.Component {
 				{
 					src: 'sprout-3.png',
 					width: '5%',
-					x: '56%',
+					x: '55%',
 					y: '66%'
 				}
 			],
@@ -207,8 +231,8 @@ class Book extends React.Component {
 				{
 					src: 'sprout-4.png',
 					width: '9%',
-					x: '55%',
-					y: '66.5%'
+					x: '54.5%',
+					y: '65%'
 				}
 			],
 
@@ -222,8 +246,38 @@ class Book extends React.Component {
 				{
 					src: 'sprout-5.png',
 					width: '12%',
-					x: '53.5%',
-					y: '61%'
+					x: '52%',
+					y: '63%'
+				}
+			],
+
+			//Frame 14
+			[
+				{
+					src: 'ground-1.png',
+					width: '100%',
+					bottom: true
+				},
+				{
+					src: 'teen-tree.png',
+					width: '12%',
+					x: '52%',
+					y: '33%'
+				}
+			],
+
+			//Frame 15
+			[
+				{
+					src: 'ground-1.png',
+					width: '100%',
+					bottom: true
+				},
+				{
+					src: 'mature-tree.png',
+					width: '55%',
+					x: '31%',
+					y: '9%'
 				}
 			],
 		];
