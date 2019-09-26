@@ -348,6 +348,8 @@ class Book extends React.Component {
 			],
 		];
 
+		
+
 		this.pixelsPerFrame = 1000;
 
 		this.state = {
@@ -364,6 +366,25 @@ class Book extends React.Component {
 		this.setState({
 			frameIndex: Math.round(window.scrollY/pixelsPerFrame)
 		});
+	}
+
+	preload(args) {
+		console.log(args);
+		let images = new Array()
+		
+		for (let i = 0; i < args.length; i++) {
+			images[i] = new Image()
+			images[i].src = args[i]
+
+		}
+
+		console.log('done- ', images)
+		return images
+	}
+
+	get imageList() {
+		let unq = new Set(this.layers.flat().map(e => e.src));
+		return [...unq.values()].sort()
 	}
 
 	get activeLayers() {
@@ -395,10 +416,11 @@ class Book extends React.Component {
 		return activeLayers;
 	}
 
-
 	componentDidMount() {
 		window.addEventListener('scroll', () => this.onScrollCalculateFrame());
 		this.props.setHeight && this.props.setHeight(this.layers.length * this.pixelsPerFrame);
+
+		this.preload(this.imageList);
 	}
 
 	componentWillUnmount() {
