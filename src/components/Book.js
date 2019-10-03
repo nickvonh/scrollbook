@@ -436,6 +436,7 @@ class Book extends React.Component {
 				ea.y && (style.top = ea.y);
 				ea.bottom && (style.bottom = 0);
 				ea.width && (style.width = ea.width);
+				ea.height && (style.height = ea.height);
 			} else {
 				style.width = '100%';
 			}
