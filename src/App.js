@@ -15,7 +15,7 @@ class App extends React.Component {
     console.log('Fetching video.');
     try {
       const el = this.video.current;
-      const file = window.innerWidth <= 1024 ? 'video-mobile.mp4' : 'video.mp4';
+      const file = window.innerWidth < 1024 ? 'video-mobile.mp4' : 'video.mp4';
       const req = await fetch(`assets/${this.state.hash ? this.state.hash.replace('#', '') : file}`);
       // const req = await fetch('assets/video.mp4');
       // const req = await fetch('assets/video-compress.mp4');

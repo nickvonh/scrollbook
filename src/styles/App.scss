@@ -1,6 +1,6 @@
 #bg-video {
   position: fixed;
-  right: -10%;
+  right: 0;
   bottom: -40%;
   min-width: 100vw;
   min-height: 100vh;
@@ -96,15 +96,17 @@
   }
 }
 
-@media only screen and (min-width: 600px) {
+// Switched from mobile video to desktop.
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
   #bg-video {
-    right: 0;
+    right: -25%;
   }
 }
 
+// Portrait mode mobile.
 @media only screen and (min-height: 600px) {
   #bg-video {
-    bottom: -25%;
+    bottom: -20%;
   }
 }
 
@@ -114,8 +116,22 @@
   }
 }
 
-@media only screen and (min-height: 1024px) {
+@media only screen and (min-height: 1025px) {
   #bg-video {
     bottom: 0;
+  }
+}
+
+@media only screen and (max-height: 1023px) and (min-width: 1024px) {
+  #bg-video {
+    right: -25%;
+    bottom: -20%;
+  }
+}
+
+@media only screen and (max-height: 1023px) and (min-width: 1440px) {
+  #bg-video {
+    right: -10%;
+    bottom: -20%;
   }
 }
