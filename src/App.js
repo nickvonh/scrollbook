@@ -15,7 +15,8 @@ class App extends React.Component {
     console.log('Fetching video.');
     try {
       const el = this.video.current;
-      const req = await fetch(`assets/${this.state.hash ? this.state.hash.replace('#', '') : 'video.mp4'}`);
+      const file = window.innerWidth <= 1024 ? 'video-mobile.mp4' : 'video.mp4';
+      const req = await fetch(`assets/${this.state.hash ? this.state.hash.replace('#', '') : file}`);
       // const req = await fetch('assets/video.mp4');
       // const req = await fetch('assets/video-compress.mp4');
       // const req = await fetch('assets/video.webm');
@@ -86,7 +87,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="App" style={{height: this.state.height}}>
-        <video controls muted loop id="bg-video" ref={this.video} />
+        <video muted loop playsInline autoPlay id="bg-video" ref={this.video} />
         {/* <div className="container">
           <Book setHeight={val => this.setState({height: val})} />
         </div> */}

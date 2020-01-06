@@ -1,7 +1,7 @@
 #bg-video {
   position: fixed;
   right: -10%;
-  bottom: 0;
+  bottom: -40%;
   min-width: 100vw;
   min-height: 100vh;
 }
@@ -98,14 +98,24 @@
 
 @media only screen and (min-width: 600px) {
   #bg-video {
-    right: -85%;
-    bottom: 0;
+    right: 0;
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-height: 600px) {
   #bg-video {
-    right: 0;
+    bottom: -25%;
+  }
+}
+
+@media only screen and (min-height: 900px) {
+  #bg-video {
+    bottom: -5%;
+  }
+}
+
+@media only screen and (min-height: 1024px) {
+  #bg-video {
     bottom: 0;
   }
 }
