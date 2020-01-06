@@ -8,20 +8,25 @@ class App extends React.Component {
     height: 0,
     videoLoaded: false,
     scrollListener: null,
+    hash: window.location.hash,
   }
 
   async fetchVideo() {
     console.log('Fetching video.');
     try {
       const el = this.video.current;
+      const req = await fetch(`assets/${this.state.hash ? this.state.hash.replace('#', '') : 'video.mp4'}`);
       // const req = await fetch('assets/video.mp4');
-      const req = await fetch('assets/chrome.webm');
+      // const req = await fetch('assets/video-compress.mp4');
+      // const req = await fetch('assets/video.webm');
+      // const req = await fetch('assets/chrome.webm');
       const blob = await req.blob();
       console.log(req, blob);
       const video = URL.createObjectURL(blob);
       el.src = video;
       el.onloadedmetadata = () => {
-        !this.state.scrollListener && window.addEventListener('scroll', this.onScroll);
+        window.removeEventListener('scroll', this.onScroll);
+        window.addEventListener('scroll', this.onScroll);
         this.setState({
           videoLoaded: true,
           scrollListener: this.onScroll,
@@ -38,7 +43,7 @@ class App extends React.Component {
   onScroll = () => {
     const el = this.video.current;
     const position = window.scrollY;
-    const pixelsPerSecond = 300;
+    const pixelsPerSecond = window.innerWidth < 1200 ? 150 : 300;
     const height = el.duration * pixelsPerSecond;
 
     const positionProgress = position / (height - window.innerHeight);
@@ -53,6 +58,14 @@ class App extends React.Component {
     });
   }
 
+  onHashChange = () => {
+    if (window.location.hash !== this.state.hash) {
+      this.setState({
+        hash: window.location.hash,
+      });
+    }
+  }
+
   animate = () => {
     const el = this.video.current;
     el.currentTime = this.state.time;
@@ -61,12 +74,19 @@ class App extends React.Component {
 
   componentDidMount() {
     this.fetchVideo();
+    window.addEventListener('hashchange', this.onHashChange);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.hash !== this.state.hash) {
+      this.fetchVideo();
+    }
   }
 
   render(){
     return (
       <div className="App" style={{height: this.state.height}}>
-        <video muted loop id="bg-video" ref={this.video} />
+        <video controls muted loop id="bg-video" ref={this.video} />
         {/* <div className="container">
           <Book setHeight={val => this.setState({height: val})} />
         </div> */}

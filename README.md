@@ -66,3 +66,20 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+# VIDEO PROCESSING
+
+Scale video:
+```
+ffmpeg -i video.mp4 -vf scale=320:180 video-scale.mp4
+```
+
+Crop video:
+```
+ffmpeg -i video.mp4 -filter:v "crop=750:1080:650:0" video-crop.mp4
+```
+
+Extend GOP size (increase keyframe rate, do last because other transformations decrease GOP size):
+```
+ffmpeg -i video.mp4 -g 1 -vcodec libx264 -profile:v main -level:v 4.1 -an -movflags faststart video-extend.mp4
+```
