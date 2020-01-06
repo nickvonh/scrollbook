@@ -1,3 +1,11 @@
+#bg-video {
+  position: fixed;
+  right: -125%;
+  bottom: -25%;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
 .App {
   text-align: center;
   background-color: #5c7ab7;
@@ -8,13 +16,15 @@
 
 .container{
   position: fixed;
-  max-width: 1180px;
+  // max-width: 1180px;
   width: 100%;
-  height: calc(.726 * 100vw);
+  // height: calc(.726 * 100vw);
+  height: 100vh;
   max-height: 100vh;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  overflow: hidden;
 }
 
 .flex-center{
@@ -83,5 +93,19 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  #bg-video {
+    right: -85%;
+    bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #bg-video {
+    right: 0;
+    bottom: 0;
   }
 }

@@ -21,7 +21,7 @@ class Book extends React.Component {
 			[
 				{
 					src: 'sky.jpeg',
-					bottom: true,
+					background: true,
 					width: '100%',
 					duration: 1000
 				},
@@ -369,16 +369,14 @@ class Book extends React.Component {
 	}
 
 	preload(args) {
-		console.log(args);
-		let images = new Array()
+		let images = [];
 		
 		for (let i = 0; i < args.length; i++) {
-			images[i] = new Image()
+			images[i] = new Image();
 			images[i].src = args[i]
-
 		}
 
-		console.log('done- ', images)
+		console.log('done- ', images);
 		return images
 	}
 
@@ -389,7 +387,7 @@ class Book extends React.Component {
 
 	get activeLayers() {
 		const activeLayers = [];
-		for (let i = 0; i < this.state.frameIndex + 1; i++) {
+		for (let i = 0; i < this.state.frameIndex + 1 && i < this.layers.length; i++) {
 			const layer = this.layers[i];
 			
 			// if the layer has multiple assets
@@ -399,7 +397,7 @@ class Book extends React.Component {
 				for(let each of layer){
 					if (
 						(each.duration && each.duration > (this.state.frameIndex - i)) ||
-						i == this.state.frameIndex
+						i === this.state.frameIndex
 					) {
 						activeLayers.push(each);
 					}
@@ -407,7 +405,7 @@ class Book extends React.Component {
 			}else{
 				if (
 					(layer.duration && layer.duration > (this.state.frameIndex - i)) ||
-					i == this.state.frameIndex
+					i === this.state.frameIndex
 				) {
 					activeLayers.push(layer);
 				}
@@ -429,12 +427,13 @@ class Book extends React.Component {
 
 	render() {
 		console.log('Current frame:', this.state.frameIndex);
-		const activeLayers = this.activeLayers.map(ea => <img src={`img/${ea.src}`} key={ea.src} style={(() => {
+		const activeLayers = this.activeLayers.map(ea => <img alt={ea.src} src={`img/${ea.src}`} key={ea.src} style={(() => {
 			const style = {};
 			if (ea.width !== 'fill') {
 				ea.x && (style.left = ea.x);
 				ea.y && (style.top = ea.y);
 				ea.bottom && (style.bottom = 0);
+				ea.background && (style.minHeight = '100%') && (style.minWidth = '100%');
 				ea.width && (style.width = ea.width);
 				ea.height && (style.height = ea.height);
 			} else {
