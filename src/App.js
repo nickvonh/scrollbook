@@ -2,6 +2,20 @@ import React from 'react';
 import './styles/App.scss';
 // import Book from './components/Book';
 
+const Text = props => {
+  const {
+    start,
+    end,
+    time
+  } = props;
+
+  if (time >= start && time < end) {
+    return <div className="Text">{props.children}</div>;
+  }
+  
+  return null;
+}
+
 class App extends React.Component {
   video = React.createRef();
   state = {
@@ -85,12 +99,16 @@ class App extends React.Component {
   }
 
   render(){
+    const {
+      time,
+    } = this.state;
     return (
       <div className="App" style={{height: this.state.height}}>
         <video muted loop playsInline autoPlay id="bg-video" ref={this.video} />
-        {/* <div className="container">
-          <Book setHeight={val => this.setState({height: val})} />
-        </div> */}
+        <Text time={time} start={0} end={3.25}>
+          <h2>Wild Spring</h2>
+          <h4>A multidisciplinary cooperative of like-minded people building technology for a better, more sustainable future.</h4>
+        </Text>
       </div>
     );
   }

@@ -33,6 +33,12 @@
   justify-content: center;
 }
 
+.Text {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 .Book {
   @extend .flex-center;
   flex-direction: column;
